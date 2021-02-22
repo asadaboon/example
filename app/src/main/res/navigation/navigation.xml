@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.cookie.presenter.fragment.ProductListFragment"
+        android:label="Product"
+        tools:layout="@layout/fragment_title">
+        <action
+            android:id="@+id/action_titleFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.cookie.presenter.fragment.ProductDetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_product_detail">
+        <action
+            android:id="@+id/action_gameFragment_to_gameWonFragment"
+            app:destination="@id/gameWonFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameWonFragment"
+        android:name="com.example.cookie.gameWonFragment"
+        android:label="fragment_game_won"
+        tools:layout="@layout/fragment_game_won" />
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="com.example.cookie.gameOverFragment"
+        android:label="fragment_game_over"
+        tools:layout="@layout/fragment_game_over" />
+</navigation>
